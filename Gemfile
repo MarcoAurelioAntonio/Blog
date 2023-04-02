@@ -51,6 +51,11 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+
+  # RSpec for testing
+  gem 'rspec-rails'
+
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -76,3 +81,6 @@ gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Spec gem for testing used in rails 7
+# gem 'rspec-rails', '~> 5.0'
