@@ -1,3 +1,11 @@
+body {
+  background: #e3e3e3;
+}
+
+h1 {
+  text-align: center;
+}
+
 .section-index-users {
   margin-top: 50px;
   width: 80%;
@@ -49,12 +57,13 @@ section a {
   flex-direction: column;
   justify-content: center;
   row-gap: 10px;
-  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  background: linear-gradient(130deg, #ffff, #e3e3e3);
+  box-shadow: 8px 8px 23px #949494, -10px -10px 15px #ffff;
 }
 
 .user-info:hover {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-  transition: 0.4s;
+  transition: 0.6s;
 }
 
 .username {
