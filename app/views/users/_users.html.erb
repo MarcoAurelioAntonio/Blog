@@ -1,5 +1,5 @@
 <div class="user-container">
-	<%= link_to user_path(use), class:'user-image' do %>
+	<%= link_to user_path(use.id), class:'user-image' do %>
   	<%= image_tag use.photo, alt: "#{use.name}-avatar" %>
 	<% end %>
 	<div class="user-info">

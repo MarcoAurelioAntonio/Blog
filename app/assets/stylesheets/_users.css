@@ -2,6 +2,12 @@ body {
   background: #e3e3e3;
 }
 
+.goback {
+  margin-left: 10%;
+  text-decoration: none;
+  color: blue;
+}
+
 h1 {
   text-align: center;
 }
@@ -58,8 +64,8 @@ section a {
   justify-content: center;
   row-gap: 10px;
   border-radius: 10px;
-  background: linear-gradient(130deg, #ffff, #e3e3e3);
-  box-shadow: 8px 8px 23px #949494, -10px -10px 15px #ffff;
+  background: linear-gradient(145deg, #f3f3f3, #cccc);
+  box-shadow: 6px 6px 9px #9f9f9f, -6px -6px 9px #ffff;
 }
 
 .user-info:hover {
