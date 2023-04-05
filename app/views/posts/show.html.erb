@@ -1,4 +1,31 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1>The Post whit all its commnets</h1>
+<%= link_to user_posts_path, class: 'goback' do %><span>&laquo; Go Back </span><% end %>
 
-<p>The Post and all the Comments about it</p>
+<section class="section-index-users">
+  <div class="post-container" >
+    <h3 class="post-title"><%= @post.title %></h3>
+    <p class="post-text"><%= @post.text %></p>
+    <aside class="comment-like">
+      <span class="comments">Comments: <%= @post.comments_counter %></span>
+      <span class="likes">
+        <%= @post.likes_counter %>
+      </span>
+            
+      <button class="like-btn">
+        <%= " ♥  "%>
+      </button>
+
+    <aside>
+  </div>
+
+  <div class="post-comment">
+	  <p><u><strong>Post Comments:</strong></u></p>
+	  <% @post.comments.reverse.each do |comment| %>
+		  <p>
+        <span><strong><%= comment.author.name %>:</strong></span>
+        <span><em><%= comment.text %></em></span>
+		  </p>
+    <% end %>
+  </div>
+
+</section>

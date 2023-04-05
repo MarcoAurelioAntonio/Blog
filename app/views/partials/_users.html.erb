@@ -1,0 +1,11 @@
+<div class="user-container">
+	<%= link_to user_path(use.id), class:'user-image' do %>
+  	<%= image_tag use.photo, alt: "#{use.name}-avatar" %>
+	<% end %>
+	<div class="user-info">
+		<%= link_to user_path(use) do %>
+    	<h3 class="username"><%= use.name %></h3>
+		<% end %>
+    <span class="post-numb">Number of posts: <%= use.posts_counter %></span>
+  </div>
+</div>

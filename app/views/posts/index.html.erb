@@ -1,4 +1,6 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
-
-<p>All the posts of one User</p>
+<h1>All posts with comments!!</h1>
+<%= link_to user_path(@user), class: 'goback' do %><span>&laquo; Go Back </span><% end %>
+<section class="section-index-users">
+<%= render 'partials/users', use: @user %>
+<%= render 'partials/allposts' %>
+</section>
