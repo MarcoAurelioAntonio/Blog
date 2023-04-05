@@ -70,7 +70,7 @@
 }
 
 .post-container:hover {
-  transition: 0.4s;
+  transition: 0.1s;
   box-shadow: inset 6px 6px 9px #9f9f9f, inset -6px -6px 9px #ffff;
 }
 

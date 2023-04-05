@@ -38,11 +38,6 @@ section a {
   column-gap: 60px;
 }
 
-.user-container:hover {
-  scale: 1.01;
-  transition: 0.4s;
-}
-
 .user-image {
   width: 100px;
   height: 100px;
@@ -65,7 +60,7 @@ section a {
   row-gap: 10px;
   border-radius: 10px;
   background: linear-gradient(145deg, #f3f3f3, #cccc);
-  box-shadow: 6px 6px 9px #9f9f9f, -6px -6px 9px #ffff;
+  box-shadow: 4px 4px 9px #9f9f9f, -3px -3px 9px #ffff;
 }
 
 .user-info:hover {
