@@ -52,6 +52,12 @@ section a {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+img:hover {
+  transition: 0.6s;
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #fff, 0 0 15px #fff, 0 0 15px #fff, 0 0 15px #fff, 0 0 100px #fff;
+}
+
 .user-info {
   width: 100%;
   display: flex;

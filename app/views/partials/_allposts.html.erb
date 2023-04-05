@@ -1,0 +1,37 @@
+<div class="posts-container">
+	<% @user.recents_post.each do |post| %>
+  	<div class="post-container" >
+    	<h3 class="post-title"><%= post.title %></h3>
+  		<p class="post-text"> <%= post.text.slice(0, 180) %>
+
+        <%= link_to user_post_path(:id => post.id), class: 'link-post' do %>
+          <span class="read-more">
+            <strong>...&nbsp;[read more]</strong>
+          </span>
+        <% end %>
+      </p>
+  		<aside class="comment-like">
+    		<span class="comments">Comments: <%= post.comments_counter %></span>
+    		<span class="likes">
+      		<%= post.likes_counter %>
+    		</span>
+    			
+				<button class="like-btn">
+    			<%= " ♥  "%>
+				</button>
+ 			<aside>
+		</div>
+
+		<div class="post-comment">
+			<p><u><strong>Comments:</strong></u></p>
+			<% post.recents_comments.reverse.each do |comment| %>
+				<p>
+        	<span><strong><%= comment.author.name %>:</strong></span>
+        	<span><em><%= comment.text %></em></span>
+				</p>
+    	<% end %>
+		</div>
+
+	<% end %>
+</div>
+
