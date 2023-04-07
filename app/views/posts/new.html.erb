@@ -1,5 +1,6 @@
-<section class="form-section">
-	<h2>Create your New Post <span class="post-emoji">📰</span></h2>
+<section class="section-index-users">
+	<%= link_to user_posts_path, class: 'goback' do %><span>&laquo; Go Back </span><% end %>
+	<h2>Create your New Post <span class="post-emoji">&nbsp; &nbsp; &nbsp;<%= image_tag "https://www.emojiall.com/en/header-svg/%F0%9F%93%B0.svg"%></span></h2>
 
 	<%= form_with model: @post, url: user_posts_path do |form| %>
   	<%= form.label :title, "Title of your Post:" %>
@@ -10,7 +11,7 @@
 		<br>
   	<%= form.text_area :text, size: "40x10", placeholder: "What do you want to post?..." %>
 		<br>
-  	<%= form.submit "Send your Post now!! " %>
+  	<%= form.submit "Send your Post now!!", class: 'button'%>
 		<%= form.hidden_field :authenticity_token %>
 	<% end %>
 </section>
