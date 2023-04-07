@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   # Route for posts
   get 'users/:user_id/posts', to: 'posts#index', as: 'user_posts'
   get 'users/:user_id/posts/:id', to: 'posts#show', as: 'user_post'
+  
+  # Routes for create a new post
+  get 'users/:user_id/posts/new', to: 'posts#new', as: 'new_user_post'
+  post 'users/:user_id/posts', to: 'posts#create'
+
 end
+

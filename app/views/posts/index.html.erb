@@ -2,5 +2,10 @@
 <%= link_to user_path(@user), class: 'goback' do %><span>&laquo; Go Back </span><% end %>
 <section class="section-index-users">
 <%= render 'partials/users', use: @user %>
+<%= link_to new_user_post_path do %>
+  <button type="button" class="">
+    New Post
+  </button>
+	<% end %>
 <%= render 'partials/allposts' %>
 </section>

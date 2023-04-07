@@ -1,0 +1,16 @@
+<section class="form-section">
+	<h2>Create your New Post <span class="post-emoji">📰</span></h2>
+
+	<%= form_with model: @post, url: user_posts_path do |form| %>
+  	<%= form.label :title, "Title of your Post:" %>
+  	<br>
+  	<%= form.text_field :title, placeholder: "Your title here..." %>
+		<br>
+  	<%= form.label :text, "Text of your Post:" %>
+		<br>
+  	<%= form.text_area :text, size: "40x10", placeholder: "What do you want to post?..." %>
+		<br>
+  	<%= form.submit "Send your Post now!! " %>
+		<%= form.hidden_field :authenticity_token %>
+	<% end %>
+</section>
