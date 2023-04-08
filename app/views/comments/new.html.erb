@@ -1,0 +1,15 @@
+<h1>Write your Comment here!!</h1>
+
+<%= link_to user_posts_path, class: 'goback' do %><span>&laquo; Go Back </span><% end %>
+<section class="section-index-users">
+  <%= form_with model: @comment, url: user_post_comments_path do | form | %>
+		<%= form.label "Your comment here: "%>
+		<br>
+		<%= form.text_area :text, size: "40x10", placeholder: "Please, be nice... " %>
+		<br>
+
+		<%= form.submit "Send your comment!!", class: 'button' %>
+		<%= form.hidden_field :authenticity_token %>
+  <% end %>
+
+</section>

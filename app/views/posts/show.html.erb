@@ -10,10 +10,10 @@
       <span class="likes">
         <%= @post.likes_counter %>
       </span>
-            
-      <button class="like-btn">
-        <%= " ♥  "%>
-      </button>
+          
+      <%= form_with model: Like.new, url: user_post_likes_path(@user, @post), class: 'form-like' do |form| %>
+        <% form.submit :♥,  class:"like-btn"%>
+      <% end %>
 
     <aside>
   </div>
@@ -27,5 +27,11 @@
 		  </p>
     <% end %>
   </div>
+
+  <%= link_to new_user_post_comment_path(@user, @post) do %>
+    <button type="button" class="button">
+      New Comment
+    </button>
+  <% end %>
 
 </section>
