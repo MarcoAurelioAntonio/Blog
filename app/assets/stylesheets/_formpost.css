@@ -30,12 +30,3 @@ textarea:focus {
   box-shadow: inset 6px 6px 9px #9f9f9f, inset -6px -6px 9px #ffff;
   outline: none;
 }
-
-/*
-input[type="submit"] {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-} */

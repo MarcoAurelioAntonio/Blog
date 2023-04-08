@@ -13,14 +13,8 @@ class PostsController < ApplicationController
 
   def show
     # params[:user_id]
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-
-    #@user = User.find(params[:user_id])
-    #if params[:id] == "new"
-    #  @post = Post.new
-    #else
-    #  @post = Post.find(params[:id])
-    #end
   end
 
   # Action for the form
