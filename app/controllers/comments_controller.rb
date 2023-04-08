@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
     @comment.author_id = current_user.id
     @comment.post_id = params[:post_id]
 
-
     if @comment.save
       # redirect_to user_posts_path
       redirect_to user_posts_path(@comment.post, @comment.author)
@@ -20,6 +19,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:text)
   end

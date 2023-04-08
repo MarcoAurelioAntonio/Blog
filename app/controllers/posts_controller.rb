@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  # If you used id for both, how would it know which id is that? 
-  # For example when your getting only the users url, its a single id so it can be just ID... 
-  # In the second cenario, you're gonna have 2 different ids, one for the user, 
-  # and another id for the post (example: 1 and 5), 
-  # so for you to know which one you're dealing with, 
-  # conventionally, only the last one is gonna be just "id", 
+  # If you used id for both, how would it know which id is that?
+  # For example when your getting only the users url, its a single id so it can be just ID...
+  # In the second cenario, you're gonna have 2 different ids, one for the user,
+  # and another id for the post (example: 1 and 5),
+  # so for you to know which one you're dealing with,
+  # conventionally, only the last one is gonna be just "id",
   # the previous ones are gonna be along their model names, like user_id.
   def index
     @user = User.find(params[:user_id])
@@ -42,6 +42,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
-
 end
