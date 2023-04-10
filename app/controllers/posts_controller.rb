@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   # the previous ones are gonna be along their model names, like user_id.
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.recents_post
+    @posts = @user.posts.includes(:comments, :likes)
   end
 
   def show
