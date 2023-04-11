@@ -9,6 +9,6 @@ class User < ApplicationRecord
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def recents_post
-    posts.limit(3).order(created_at: :desc)
+    posts.limit(3).order(created_at: :desc) # For the test query Im still using 3 posts, cuz queries are too much
   end
 end
