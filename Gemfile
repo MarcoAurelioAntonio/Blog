@@ -84,3 +84,6 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Addind devise gem for authentication
 gem 'devise'
+
+# Adding letter_opener gem for email testing
+gem 'letter_opener'
