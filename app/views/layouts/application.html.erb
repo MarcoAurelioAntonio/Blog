@@ -12,6 +12,22 @@
 
   <body>
 
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <%=link_to "Home", root_path, class: ''%>
+        <% unless current_user %>
+        <li class="">
+          <%=link_to "Signin", new_user_session_path, class: ''%>
+        </li>
+        <li class="">
+          <%=link_to "Signup", new_user_registration_path, class: ''%>
+        </li>
+        <% end %>
+        <% if current_user %>
+          <li class=""><a href="#" class=""> <%= current_user.name%> </a></li>
+          <li class=""><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: ''%></li>
+        <%end%>
+    </header>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     

@@ -22,9 +22,9 @@ Rails.application.routes.draw do
   #post 'users/:user_id/posts', to: 'posts#create'
 
   resources :users, only: [:index, :show] do 
-    resources :posts, only: [:index, :show, :new, :create] do
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do
       resources :likes, only: [:create]
-      resources :comments, only: [:new, :create]
+      resources :comments, only: [:new, :create, :destroy]
     end
   end
 
