@@ -87,3 +87,6 @@ gem 'devise'
 
 # Adding letter_opener gem for email testing
 gem 'letter_opener'
+
+# Adding cancancan gem for authorization
+gem 'cancancan', '~> 3.5'
