@@ -82,5 +82,8 @@ gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-# Spec gem for testing used in rails 7
-# gem 'rspec-rails', '~> 5.0'
+# Addind devise gem for authentication
+gem 'devise'
+
+# Adding letter_opener gem for email testing
+gem 'letter_opener'

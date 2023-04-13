@@ -1,0 +1,10 @@
+<h1>Forgot your password?</h1>
+<section class="section-index-users">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.submit "Send me reset password instructions", class: 'button', style: 'width: 300px;' %>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</section>

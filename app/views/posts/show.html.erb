@@ -11,7 +11,7 @@
         <%= @post.likes_counter %>
       </span>
           
-      <%= form_with model: Like.new, url: user_post_likes_path(@user, @post), class: 'form-like' do |form| %>
+      <%= form_with model: Like.new, url: user_post_likes_path(@user, @post) do |form| %>
         <% form.submit :♥,  class:"like-btn"%>
       <% end %>
 
