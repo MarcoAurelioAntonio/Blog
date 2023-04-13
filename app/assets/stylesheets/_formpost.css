@@ -11,6 +11,7 @@ label {
   font-weight: bold;
 }
 
+input,
 input[type="text"],
 textarea {
   padding: 10px;
@@ -29,4 +30,10 @@ textarea:focus {
   transition: 0.1s;
   box-shadow: inset 6px 6px 9px #9f9f9f, inset -6px -6px 9px #ffff;
   outline: none;
+}
+
+/* Just for the checkbox */
+.check-box {
+  display: inline;
+  width: auto;
 }
