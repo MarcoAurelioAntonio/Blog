@@ -7,12 +7,12 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
-    if user.role == 'admin'
+    if user.admin?
       can :manage, :all
     else
       can :read, :all
-      can :manage, Post, user_id: user.id
-      can :manage, Comment, user_id: user.id
+      can :manage, Post, author_id: user.id
+      can :manage, Comment, author_id: user.id
     end
 
     # Define abilities for the user here. For example:
