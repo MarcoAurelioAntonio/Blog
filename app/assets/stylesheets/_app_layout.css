@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 10%;
+  margin-top: 50px;
+}
+
+.home {
+  font-size: 30px;
+  font-weight: bold;
+  color: brown;
+}
+
+li {
+  font-size: 20px;
+  list-style: none;
+  color: black;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.notice,
+.alert {
+  font-style: italic;
+  font-size: 20px;
+  margin-inline: 10%;
+}
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: red;
+}

@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def recents_post
     posts.limit(3).order(created_at: :desc) # For the test query Im still using 3 posts, cuz queries are too much
   end
+
+  def admin?
+    role == 'admin'
+  end
 end
