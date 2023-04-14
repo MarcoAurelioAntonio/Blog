@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  load_and_authorize_resource
+
   # If you used id for both, how would it know which id is that?
   # For example when your getting only the users url, its a single id so it can be just ID...
   # In the second cenario, you're gonna have 2 different ids, one for the user,
@@ -34,6 +37,20 @@ class PostsController < ApplicationController
       redirect_to user_posts_path
     else
       render :new
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.comments.each(&:destroy)
+    @post.likes.each(&:destroy)
+    
+    if @post.destroy
+      current_user.update(posts_counter: current_user.posts.count)
+      redirect_to user_path(current_user), notice: 'Post Deleted Successfully'
+    else
+      flash.now[:error] = 'Error! Post Not deleted'
+      render :show, status: :unprocessable_entity
     end
   end
 

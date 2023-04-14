@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 100px;
+  margin-top: 50px;
+}
+
+.home {
+  font-size: 30px;
+  font-weight: bold;
+  color: brown;
+}
+
+li {
+  font-size: 20px;
+  list-style: none;
+  color: black;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

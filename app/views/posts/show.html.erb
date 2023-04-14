@@ -4,7 +4,7 @@
 <section class="section-index-users">
   <div class="post-container" >
     <h3 class="post-title"><%= @post.title %></h3>
-    <p class="post-text"><%= @post.text %></p>
+    <div class="post-text"><%= @post.text %></div>
     <aside class="comment-like">
       <span class="comments">Comments: <%= @post.comments_counter %></span>
       <span class="likes">
@@ -12,8 +12,14 @@
       </span>
           
       <%= form_with model: Like.new, url: user_post_likes_path(@user, @post) do |form| %>
-        <% form.submit :♥,  class:"like-btn"%>
+        <% form.submit :♥,  class:"like-btn", title: "Like"%>
       <% end %>
+
+      <% if can? :destroy, @post%>
+        <%=link_to "🗑", user_post_path,
+          data: { turbo_method: :delete, turbo_confirm: "Are You Sure?"  },
+          class: '', style: 'font-size: 20px; margin-left: 40px; margin-right: 10px;', title: "Delete Post" %>
+      <%end%>
 
     <aside>
   </div>
@@ -24,6 +30,12 @@
 		  <p>
         <span><strong><%= comment.author.name %>:</strong></span>
         <span><em><%= comment.text %></em></span>
+
+        <% if can? :destroy, comment%>
+          <%=link_to "🗑", user_post_comment_path(@user, @post, comment),
+          data: { turbo_method: :delete, turbo_confirm: "Are You Sure?"  },
+          class: '', style: 'font-size: 20px;' %>
+        <%end%>
 		  </p>
     <% end %>
   </div>

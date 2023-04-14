@@ -12,20 +12,22 @@
 
   <body>
 
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <%=link_to "Home", root_path, class: ''%>
+    <header class="header">
+      <%=link_to "HOME", root_path, class: 'home'%>
+      <div>
         <% unless current_user %>
-        <li class="">
+        <li class="in">
           <%=link_to "Signin", new_user_session_path, class: ''%>
         </li>
-        <li class="">
+        <li class="up">
           <%=link_to "Signup", new_user_registration_path, class: ''%>
         </li>
         <% end %>
         <% if current_user %>
-          <li class=""><a href="#" class=""> <%= current_user.name%> </a></li>
-          <li class=""><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: ''%></li>
+          <li class="user-name"><a href="#" class="home">Hi, <%= current_user.name%> </a></li>
+          <li class="log-out"><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'button', style: 'width: 100px;'%></li>
         <%end%>
+      </div>
     </header>
 
     <p class="notice"><%= notice %></p>

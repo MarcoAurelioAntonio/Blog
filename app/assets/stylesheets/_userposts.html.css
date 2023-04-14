@@ -110,7 +110,6 @@ h3 {
 .like-btn {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 30px;
   color: red;
   font-size: 30px;
@@ -130,6 +129,18 @@ h3 {
   color: black;
   list-style: none;
   text-decoration: none;
+}
+
+span {
+  word-break: break-all;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.trash {
+  color: #ffff;
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 .read-more {
