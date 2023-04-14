@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   load_and_authorize_resource
 
   # If you used id for both, how would it know which id is that?
@@ -44,9 +43,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.comments.each(&:destroy)
     @post.likes.each(&:destroy)
-    
+
     if @post.destroy
-      current_user.update(posts_counter: current_user.posts.count)
+      current_user.decrement!(:posts_counter) # Resta 1 al contador de posts del usuario.
+      # current_user.update(posts_counter: current_user.posts.count) Esto es inefficiente.
       redirect_to user_path(current_user), notice: 'Post Deleted Successfully'
     else
       flash.now[:error] = 'Error! Post Not deleted'
